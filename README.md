@@ -63,22 +63,22 @@ except Exception as e:
 
 ```bash
 # 仅安装核心（零依赖）
-pip install needle
+pip install needle-fixer
 
 # 图像策略（OpenCV 模板匹配）
-pip install "needle[image]"
+pip install "needle-fixer[image]"
 
 # AI 策略（内置 Kimi / Moonshot 客户端）
-pip install "needle[ai]"
+pip install "needle-fixer[ai]"
 
 # Playwright 运行时（如项目尚未安装）
-pip install "needle[playwright]"
+pip install "needle-fixer[playwright]"
 
 # 全部可选依赖
-pip install "needle[all]"
+pip install "needle-fixer[all]"
 
 # 开发依赖
-pip install "needle[dev]"
+pip install "needle-fixer[dev]"
 ```
 
 > **注意**：缓存策略基于 JSON 文件，零依赖，已包含在核心包中。
