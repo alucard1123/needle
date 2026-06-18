@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "failback"
+version = "0.1.0"
+description = "自动化测试异常自愈库：handle_exception → 责任链查找 FailBackSolution 自动修复"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "needle" }]
+keywords = ["testing", "playwright", "exception", "self-healing", "recovery"]
+dependencies = []  # 核心零依赖
+
+[project.optional-dependencies]
+# 内置策略的重依赖，按需安装
+image = ["opencv-python", "numpy", "Pillow"]
+ai = ["aiohttp>=3.9", "httpx>=0.25"]
+playwright = ["playwright>=1.40"]
+all = ["opencv-python", "numpy", "Pillow", "aiohttp>=3.9", "httpx>=0.25", "playwright>=1.40"]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["failback*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
