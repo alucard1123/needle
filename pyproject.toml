@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "needle"
+name = "needle-fixer"
 version = "0.1.0"
 description = "自动化测试异常自愈库：handle_exception → 责任链查找 NeedleSolution 自动修复"
 readme = "README.md"
