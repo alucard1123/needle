@@ -1,13 +1,13 @@
-"""扩展契约：用户自定义 FailBackSolution 能被注册、发现并命中。"""
+"""扩展契约：用户自定义 NeedleSolution 能被注册、发现并命中。"""
 
-from failback import FailBackSolution, register_solution
-from failback.core.registry import SolutionRegistry
-from failback.core.exceptions import RepairFailedException
+from needle import NeedleSolution, register_solution
+from needle.core.registry import SolutionRegistry
+from needle.core.exceptions import RepairFailedException
 
 
 def test_custom_solution_via_decorator_is_discovered_and_used():
     @register_solution
-    class MyRetry(FailBackSolution):
+    class MyRetry(NeedleSolution):
         PRIORITY = 5
 
         def can_fix(self):
@@ -28,7 +28,7 @@ def test_custom_priority_beats_lower_priority():
     order = []
 
     @register_solution
-    class Low(FailBackSolution):
+    class Low(NeedleSolution):
         PRIORITY = 100
 
         def can_fix(self):
@@ -39,7 +39,7 @@ def test_custom_priority_beats_lower_priority():
             return False
 
     @register_solution
-    class High(FailBackSolution):
+    class High(NeedleSolution):
         PRIORITY = 1
 
         def can_fix(self):

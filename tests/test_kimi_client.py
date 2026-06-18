@@ -4,8 +4,8 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from failback.builtin import KimiClient
-from failback.builtin.kimi_client import KimiClient as KimiClientDirect
+from needle.builtin import KimiClient
+from needle.builtin.kimi_client import KimiClient as KimiClientDirect
 
 
 def _make_mock_httpx_client(response_content: str):

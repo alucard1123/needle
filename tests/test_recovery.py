@@ -1,11 +1,11 @@
 """责任链与 attempt_recovery 的成功/失败两路。"""
 
-from failback.core.exceptions import RepairFailedException
-from failback.core.registry import SolutionRegistry
-from failback.core.solution import FailBackSolution
+from needle.core.exceptions import RepairFailedException
+from needle.core.registry import SolutionRegistry
+from needle.core.solution import NeedleSolution
 
 
-class CannotFix(FailBackSolution):
+class CannotFix(NeedleSolution):
     PRIORITY = 10
     handled = False
 
@@ -17,7 +17,7 @@ class CannotFix(FailBackSolution):
         return True
 
 
-class FixesIt(FailBackSolution):
+class FixesIt(NeedleSolution):
     PRIORITY = 20
 
     def can_fix(self):
@@ -28,7 +28,7 @@ class FixesIt(FailBackSolution):
         return True
 
 
-class AlwaysFails(FailBackSolution):
+class AlwaysFails(NeedleSolution):
     PRIORITY = 30
 
     def can_fix(self):
@@ -67,7 +67,7 @@ def test_attempt_recovery_no_solutions():
 
 
 def test_solution_fix_exception_does_not_break_chain():
-    class Boom(FailBackSolution):
+    class Boom(NeedleSolution):
         PRIORITY = 5
 
         def can_fix(self):

@@ -3,27 +3,45 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "failback"
+name = "needle"
 version = "0.1.0"
-description = "自动化测试异常自愈库：handle_exception → 责任链查找 FailBackSolution 自动修复"
+description = "自动化测试异常自愈库：handle_exception → 责任链查找 NeedleSolution 自动修复"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "needle" }]
-keywords = ["testing", "playwright", "exception", "self-healing", "recovery"]
+authors = [{ name = "laowooooo" }]
+keywords = ["testing", "playwright", "exception", "self-healing", "recovery", "automation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+]
 dependencies = []  # 核心零依赖
 
 [project.optional-dependencies]
 # 内置策略的重依赖，按需安装
 image = ["opencv-python", "numpy", "Pillow"]
-ai = ["aiohttp>=3.9", "httpx>=0.25"]
+ai = ["httpx>=0.25"]
 playwright = ["playwright>=1.40"]
-all = ["opencv-python", "numpy", "Pillow", "aiohttp>=3.9", "httpx>=0.25", "playwright>=1.40"]
+all = ["opencv-python", "numpy", "Pillow", "httpx>=0.25", "playwright>=1.40"]
 dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/alucard1123/needle"
+Repository = "https://github.com/alucard1123/needle"
+Issues = "https://github.com/alucard1123/needle/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["failback*"]
+include = ["needle*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

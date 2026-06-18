@@ -1,12 +1,12 @@
 """内置 locator 修复策略的行为。"""
 
-from failback.builtin.locator_solutions import (
+from needle.builtin.locator_solutions import (
     ByCacheSolution,
     ByImageSolution,
     ByPromptSolution,
 )
-from failback.core.exceptions import RepairFailedException
-from failback.core.registry import SolutionRegistry
+from needle.core.exceptions import RepairFailedException
+from needle.core.registry import SolutionRegistry
 
 
 class _FakeLocator:

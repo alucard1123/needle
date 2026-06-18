@@ -2,16 +2,16 @@
 
 import pytest
 
-from failback.core.context import DefaultContextBuilder, PlaywrightContextBuilder
-from failback.core.exceptions import RepairFailedException
-from failback.core.handler import ExceptionHandler, handle_exception
-from failback.core.registry import SolutionRegistry
-from failback.core.solution import FailBackSolution
+from needle.core.context import DefaultContextBuilder, PlaywrightContextBuilder
+from needle.core.exceptions import RepairFailedException
+from needle.core.handler import ExceptionHandler, handle_exception
+from needle.core.registry import SolutionRegistry
+from needle.core.solution import NeedleSolution
 
 from conftest import FakeError
 
 
-class _Fixer(FailBackSolution):
+class _Fixer(NeedleSolution):
     PRIORITY = 10
 
     def can_fix(self):

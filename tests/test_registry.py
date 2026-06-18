@@ -2,11 +2,11 @@
 
 import pytest
 
-from failback.core.registry import SolutionRegistry
-from failback.core.solution import FailBackSolution
+from needle.core.registry import SolutionRegistry
+from needle.core.solution import NeedleSolution
 
 
-class A(FailBackSolution):
+class A(NeedleSolution):
     PRIORITY = 30
 
     def can_fix(self):
@@ -16,7 +16,7 @@ class A(FailBackSolution):
         return True
 
 
-class B(FailBackSolution):
+class B(NeedleSolution):
     PRIORITY = 10
 
     def can_fix(self):
@@ -42,7 +42,7 @@ def test_register_rejects_non_solution():
     with pytest.raises(TypeError):
         SolutionRegistry.register(int)
     with pytest.raises(TypeError):
-        SolutionRegistry.register(FailBackSolution)
+        SolutionRegistry.register(NeedleSolution)
 
 
 def test_create_chain_links_in_priority_order():
@@ -77,6 +77,6 @@ def test_create_chain_includes_builtins():
 
 
 def test_scan_discovers_builtin_package():
-    found = SolutionRegistry.scan("failback.builtin", register=False)
+    found = SolutionRegistry.scan("needle.builtin", register=False)
     names = {c.__name__ for c in found}
     assert {"ByCacheSolution", "ByImageSolution", "ByPromptSolution", "TimeoutSolution"} <= names

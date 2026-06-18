@@ -1,6 +1,6 @@
 import pytest
 
-from failback.core.registry import SolutionRegistry
+from needle.core.registry import SolutionRegistry
 
 
 @pytest.fixture(autouse=True)
