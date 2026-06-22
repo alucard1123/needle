@@ -1,7 +1,7 @@
 # needle
 
-[![PyPI](https://img.shields.io/pypi/v/needle.svg)](https://pypi.org/project/needle/)
-[![Python](https://img.shields.io/pypi/pyversions/needle.svg)](https://pypi.org/project/needle/)
+[![PyPI](https://img.shields.io/pypi/v/needle.svg)](https://pypi.org/project/needle-fixer/)
+[![Python](https://img.shields.io/pypi/pyversions/needle.svg)](https://pypi.org/project/needle-fixer/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Tests](https://img.shields.io/badge/tests-pytest-blue.svg)](./tests)
 
