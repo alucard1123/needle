@@ -347,12 +347,12 @@ pytest --cov=needle --cov-report=term-missing
 ## 关于作者
 公众号： 中年老吴
 
-<img src="image.png" width="300" height="300" alt="公众号二维码">
+<img src="./gongzhonghaoQR.png" width="300" height="300" alt="公众号二维码">
 
 赏老吴杯咖啡：
 
-<img src="IMG_0550.JPG" width="300" height="400" alt="赏老吴杯咖啡">
+<img src="./payQR.JPG" width="300" height="400" alt="赏老吴杯咖啡">
 
 找老吴私聊：
 
-<img src="IMG_0549.JPG" width="300" height="400" alt="找老吴私聊">
+<img src="./weixinQR.JPG" width="300" height="400" alt="找老吴私聊">
